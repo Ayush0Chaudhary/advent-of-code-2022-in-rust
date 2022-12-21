@@ -1,7 +1,7 @@
 use std::{fs::File, io::Read};
 
 fn top3() {
-    let mut file = File::open("/home/panda/Desktop/aoc/day1/src/data.txt").expect("sorry");
+    let mut file = File::open("/home/panda/Desktop/aoc/day2/src/data.txt").expect("sorry");
     let mut data_in_str = String::new();
     let mut int_in_vec = Vec::new();
     file.read_to_string(&mut data_in_str).expect("sorry can set");

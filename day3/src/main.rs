@@ -18,26 +18,11 @@ fn main(){
         counter+=1;
         let wd3 = datavec.get(counter as usize).unwrap().to_string();
         let common:String = wd1.chars().filter(|c| wd2.contains(*c)).collect();
-        let common2:String = wd3.chars().filter(|c| common.contains(*c)).collect(); 
-        // println!("{}", common2.chars().next().unwrap());
+        let common2:String = wd3.chars().filter(|c| common.contains(*c)).collect();
         sum = sum + find_sc(common2.chars().next().unwrap());
 
     println!("{}", sum);
     }
-
-    // let new_vec:Vec<Vec<&str>> = Vec::new();
-    // for i in 0..100{
-    //     for k in 0..3 {
-    //         new_vec[i].push(datavec)
-    //     }
-    //     // if limiter < 4 {
-    //     //     println!("g");
-    //     // }
-    // }
-    // for i in &datavec{
-
-
-    // }
 }
 fn find_sc(ff : char) -> u32 {
     let ascii_value = ff as u32;

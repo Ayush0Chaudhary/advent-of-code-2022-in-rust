@@ -19,19 +19,24 @@ fn main() {
         datavec.push(i);
         let (f_from,s_form)   = i.split_once("from").unwrap();
         let quantity_str:Vec<&str> = f_from.split_whitespace().collect();
-        let quantity = quantity_str.get(1).unwrap().parse::<i32>().unwrap();
+        let quantity:usize = quantity_str.get(1).unwrap().parse::<usize>().unwrap();
         let loc = s_form.chars().nth(1).unwrap() as usize -49;
         let fin = s_form.chars().nth(6).unwrap() as usize -49;
             // let ele = *v[0].get(0).unwrap();
             // v[0].remove(0);
             // v[1].insert(0, ele);
             // println!("{}{}", v[0].get(0).unwrap(), v[1].get(0).unwrap());
-        for _i in 0..quantity{
-            let ele = *v[loc].get(0).unwrap();
-            v[loc].remove(0);
-            v[fin].insert(0, ele);
+            let mut elev = Vec::new();
+            //taking the element in order
+        for i in 0..quantity{
+            let ele = *v[loc].get(i).unwrap();
+            elev.push(ele);
         }        
-
+        for i in 0..quantity{
+            v[loc].remove(0);
+            v[fin].insert(0, elev.get(quantity - i-1).unwrap())
+        }
+            // v[fin].insert(0, ele);
 
     }
     for i in 0..9{
